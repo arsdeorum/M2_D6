@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sito E-commerce Smartphones</title>
+  <link rel="stylesheet" href="style.css">
+  </style>
+</head>
+<body>
+  <!-- ESERCIZIO 1: Inserisci un tag h1 con il nome del tuo negozio -->
+  <h1>Smartphone Shop</h1>
+
+  <!-- ESERCIZIO 2: Aggiungi i 5 prodotti più in vista del tuo negozio -->
+  <div class="product">
+    <img src="https://smarterstore.it/media/catalog/product/cache/bbdb739b87028f9591d60aa80031ac87/4/1/41l9dhsjfzl._ac__1.jpg" alt="Prodotto 1">
+    <div>
+      <h3>Motorola Moto E30</h3>
+      <p>32GB 2GB RAM Dual SIM Mineral Grey Europa</p>
+      <p>Prezzo: €299</p>
+      <a href="https://smarterstore.it/motorola-moto-e30-32gb-2gb-ram-dual-sim-mineral-grey-europa.html">Link shop</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://smarterstore.it/media/catalog/product/cache/bbdb739b87028f9591d60aa80031ac87/r/e/realme-c55-8gb-256gb-dual-sim-sunshower-oro.jpg" alt="Prodotto 2">
+    <div>
+      <h3>Realme C55</h3>
+      <p>256GB 8GB RAM Dual Sim Sunshower Europa</p>
+      <p>Prezzo: €399</p>
+      <a href="https://smarterstore.it/realme-c55-256gb-8gb-ram-dual-sim-sunshower-europa.html">Link shop</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://smarterstore.it/media/catalog/product/cache/bbdb739b87028f9591d60aa80031ac87/8/1/81dx4xjfvvl_1.jpg" alt="Prodotto 3">
+    <div>
+      <h3>Realme C55</h3>
+      <p>256GB 8GB RAM Dual Sim Rainy Night Europa</p>
+      <p>Prezzo: €499</p>
+      <a href="https://smarterstore.it/realme-c55-256gb-8gb-ram-dual-sim-rainy-night-europa.html">Link shop</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://smarterstore.it/media/catalog/product/cache/bbdb739b87028f9591d60aa80031ac87/l/d/ld0006016539.jpg" alt="Prodotto 4">
+    <div>
+      <h3>Xiaomi 13 Pro 5G</h3>
+      <p>256GB 12GB RAM Dual Sim White Europa</p>
+      <p>Prezzo: €599</p>
+      <a href="https://smarterstore.it/xiaomi-13-pro-5g-256gb-12gb-ram-dual-sim-white-europa.html">Link shop</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://smarterstore.it/media/catalog/product/cache/bbdb739b87028f9591d60aa80031ac87/g/o/google-pixel-7a-sea_2.jpg" alt="Prodotto 5">
+    <div>
+      <h3>Google Pixel 7a 5G</h3>
+      <p>128GB 8GB RAM Dual SIM Sea Europa</p>
+      <p>Prezzo: €699</p>
+      <a href="https://smarterstore.it/google-pixel-7a-5g-128gb-8gb-ram-dual-sim-sea-europa.html">Link shop</a>
+    </div>
+  </div>
+
+  <!-- ESERCIZIO 6: Aggiungi un campo testuale in cui l'utente può lasciare un commento su un prodotto -->
+  <input type="text" id="commento" placeholder="Lascia un commento">
+
+  <!-- ESERCIZIO 5: Aggiungi un footer con il nome e l'indirizzo del tuo negozio -->
+  <footer>
+    <p>Smartphone Shop</p>
+    <p>Via del Negozio, 1234</p>
+  </footer>
+
+  <script>
+    // ESERCIZIO 7: Scrivi una funzione per cambiare il contenuto del tag h1 in qualcos'altro
+    function cambiaContenutoH1(nuovoContenuto) {
+      const h1Element = document.querySelector('h1');
+      h1Element.textContent = nuovoContenuto;
+    }
+
+    // ESERCIZIO 8: Scrivi una funzione per cambiare il colore di background della pagina
+    function cambiaColoreBackground(colore) {
+      document.body.style.backgroundColor = colore;
+    }
+
+    // ESERCIZIO 9: Scrivi una funzione per cambiare l'indirizzo presente nel footer in un altro, fittizio
+    function cambiaIndirizzoFuturo(nuovoIndirizzo) {
+      const linkElement = document.querySelector('footer p:nth-child(2)');
+      linkElement.textContent = nuovoIndirizzo;
+    }
+
+    // ESERCIZIO 10: Scrivi una funzione per aggiungere una classe CSS ad ogni link Amazon della tabella
+    function aggiungiClasseCSSAiLinkAmazon() {
+      const linkElements = document.querySelectorAll('a[href*="smarterstore"]');
+      linkElements.forEach((element) => {
+        element.classList.add('amazon-link');
+      });
+    }
+
+    // ESERCIZIO 11: Scrivi una funzione per aggiungere/togliere una classe CSS a tutte le immagini della tabella; questa classe deve modificare la visibilità/invisibilità dell'immagine
+    function toggleVisibilitaImmagini() {
+      const imageElements = document.querySelectorAll('.product img');
+      imageElements.forEach((element) => {
+        element.classList.toggle('hidden-image');
+      });
+    }
+
+    // ESERCIZIO 12: Scrivi una funzione per cambiare il colore del prezzo di ogni prodotto in uno differente, ogni volta che viene invocata
+    function cambiaColorePrezzo() {
+      const priceElements = document.querySelectorAll('.product p:last-child');
+      priceElements.forEach((element) => {
+        const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+        element.style.color = randomColor;
+      });
+    }
+  </script>
+
+  <!-- Bottone per eseguire l'esercizio 7 -->
+  <button onclick="cambiaContenutoH1('Nuovo Titolo')">Cambia Titolo</button>
+
+  <!-- Bottone per eseguire l'esercizio 8 -->
+  <button onclick="cambiaColoreBackground('red')">Cambia Colore Background</button>
+
+  <!-- Bottone per eseguire l'esercizio 9 -->
+  <button onclick="cambiaIndirizzoFuturo('Nuovo Indirizzo')">Cambia Indirizzo Futuro</button>
+
+  <!-- Bottone per eseguire l'esercizio 10 -->
+  <button onclick="aggiungiClasseCSSAiLinkAmazon()">Aggiungi Classe CSS ai link Amazon</button>
+
+  <!-- Bottone per eseguire l'esercizio 11 -->
+  <button onclick="toggleVisibilitaImmagini()">Toggle Visibilità Immagini</button>
+
+  <!-- Bottone per eseguire l'esercizio 12 -->
+  <button onclick="cambiaColorePrezzo()">Cambia Colore Prezzo</button>
+
+</body>
+</html>
